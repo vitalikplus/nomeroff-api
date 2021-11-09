@@ -15,7 +15,7 @@ COPY init.py /init.py
 RUN /init.py && rm /init.py
 COPY http_server.py /http_server.py
 
-EXPOSE 8020
+EXPOSE 8080
 
 ENTRYPOINT ["/http_server.py"]
-HEALTHCHECK CMD curl -I --fail http://localhost:8020 || exit 1
+HEALTHCHECK CMD curl -I --fail http://localhost:8080 || exit 1
